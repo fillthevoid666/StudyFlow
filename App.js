@@ -8,12 +8,10 @@ export default function App() {
   const [tasks, setTasks] = useState(INITIAL_TASKS);
   const [schedules] = useState(INITIAL_SCHEDULES);
 
-  // Menambah tugas baru ke urutan paling atas
   const handleAddTask = (newTask) => {
     setTasks((prevTasks) => [newTask, ...prevTasks]);
   };
 
-  // Mengubah status selesai / belum selesai
   const handleToggleTask = (taskId) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
@@ -22,7 +20,6 @@ export default function App() {
     );
   };
 
-  // Menghapus tugas berdasarkan ID
   const handleDeleteTask = (taskId) => {
     setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };

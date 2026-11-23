@@ -12,7 +12,12 @@ import StatCard from '../components/StatCard';
 import ScheduleCard from '../components/ScheduleCard';
 import TaskCard from '../components/TaskCard';
 
-export default function HomeScreen({ navigation, tasks, schedules, onToggleTask }) {
+export default function HomeScreen({
+  navigation,
+  tasks = [],
+  schedules = [],
+  onToggleTask,
+}) {
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((item) => item.isCompleted).length;
   const pendingTasks = totalTasks - completedTasks;
